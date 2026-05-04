@@ -208,7 +208,7 @@ export function ConversationalForm({ isOpen, onClose }: ConversationalFormProps)
 
       // TODO: Add your Web3Forms access key from https://web3forms.com
       // For now, we'll simulate a successful submission
-      const WEB3FORMS_ACCESS_KEY = ''; // Replace with your actual key
+      const WEB3FORMS_ACCESS_KEY = '397e3785-8a63-450e-95f5-82f1d17ec5cc'; // Replace with your actual key
 
       // Create detailed message with all form data
       const messageBody = `
@@ -243,13 +243,17 @@ ${formData.file ? `📎 Attachment: ${formData.file.name}` : '📎 No files atta
       `.trim();
 
       if (WEB3FORMS_ACCESS_KEY) {
-        // If access key is configured, send to Web3Forms
         const web3FormData = new FormData();
+
         web3FormData.append('access_key', WEB3FORMS_ACCESS_KEY);
-        web3FormData.append('from_name', formData.name);
-        web3FormData.append('email', formData.email || 'noreply@codweb.ae');
+
+        web3FormData.append('name', formData.name || 'Not provided');
         web3FormData.append('subject', `New Project Inquiry from ${formData.name}`);
         web3FormData.append('message', messageBody);
+
+        web3FormData.append('from_name', formData.name || 'Website Lead');
+        web3FormData.append('replyto', formData.email || '');
+
 
         if (formData.file) {
           web3FormData.append('attachment', formData.file);
