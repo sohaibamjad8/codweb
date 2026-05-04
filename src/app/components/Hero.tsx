@@ -68,7 +68,7 @@ export function Hero() {
               transition={{ delay: 0.3 }}
             >
               <span
-                className="block text-6xl md:text-8xl lg:text-[10rem] xl:text-[12rem] font-black italic bg-gradient-to-r from-[#FED201] via-[#FED201] to-[#FFE44D] bg-clip-text text-transparent"
+                className="block text-6xl md:text-8xl font-bold lg:text-[10rem] xl:text-[12rem] font-black bg-gradient-to-r from-[#FED201] via-[#FED201] to-[#FFE44D] bg-clip-text text-transparent"
                 style={{
                   fontWeight: 900,
                   WebkitTextStroke:
@@ -82,7 +82,7 @@ export function Hero() {
               </span>
               {/* Outlined text effect */}
               <motion.span
-                className="absolute inset-0 block text-6xl md:text-8xl lg:text-[10rem] xl:text-[12rem] font-black italic text-transparent"
+                className="absolute inset-0 block font-bold text-6xl md:text-8xl lg:text-[10rem] xl:text-[12rem] font-black text-transparent"
                 style={{
                   WebkitTextStroke:
                     "1px rgba(255, 255, 255, 0.1)",
@@ -116,7 +116,7 @@ export function Hero() {
           </h1>
 
           <motion.p
-            className="max-w-3xl mx-auto mb-12 text-xl text-gray-300"
+            className="max-w-3xl mx-auto mb-12 text-gray-300"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
